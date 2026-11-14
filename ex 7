@@ -1,0 +1,46 @@
+package prac;
+import java.util.ArrayList;
+public class ex9 {
+	
+
+	    public static void main(String[] args) {
+
+	        ArrayList<String> fruits = new ArrayList<>();
+
+	        // Add initial items
+	        fruits.add("Mango");
+	        fruits.add("Apple");
+	        fruits.add("Banana");
+	        fruits.add("Grapes");
+
+	        // 1. get() - access an item
+	        System.out.println("First fruit: " + fruits.get(0));
+
+	        // 2. set() - update an item
+	        fruits.set(1, "Orange");
+	        System.out.println("After set(): " + fruits);
+
+	        // 3. contains() - check if an item exists
+	        System.out.println("Contains Banana? "
+	                + fruits.contains("Banana"));
+
+	        // 4. indexOf() - find the position of an item
+	        System.out.println("Index of Grapes: "
+	                + fruits.indexOf("Grapes"));
+	
+	        // 5. remove() - remove an item using its index
+		    fruits.remove(2);
+		    System.out.println("After remove(): " + fruits);
+	
+		    // 6. size() - get the number of items
+		    System.out.println("Number of fruits: " + fruits.size());
+	
+		    // 7. isEmpty() - check if the list is empty
+		    System.out.println("Is the list empty? " + fruits.isEmpty());
+	
+		    // 8. clear() - remove all items
+		    fruits.clear();
+		    System.out.println("After clear(): " + fruits);
+		    System.out.println("Is the list empty now? " + fruits.isEmpty());
+	}
+}
