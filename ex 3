@@ -1,0 +1,38 @@
+package prac;
+
+public class ex5 {
+	public static void main(String[] args) {
+		int[][] scores = {
+				{85, 90, 78},
+				{92 ,88, 95},
+				{76, 80, 82},
+				{89, 94, 91}
+		};
+		
+		for (int row = 0; row < scores.length; row++) {
+			int total = 0;
+			for (int col = 0; col < scores[row].length; col++) {
+				total += scores[row][col];	
+			}
+	
+			double average = (double) total / scores[row].length;
+			System.out.println("Stundent " + (row + 1) 
+					+ ": Total = " + total + ", Average = " + average);
+		}		
+			
+		for (int col = 0; col < 3; col++) {	
+			int max = scores[0][col];
+			for (int row = 0; row < 4; row++) {
+					if (scores[row][col] > max) {
+							max = scores[row][col];
+			}
+					System.out.println("Subject: " + (col + 1) + ": " + max);
+		}
+		System.out.println();
+		}
+	}
+		}
+	
+
+
+
