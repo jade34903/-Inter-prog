@@ -1,0 +1,29 @@
+package prac;
+import java.util.ArrayList;
+public class ex1 { 
+	public static void main(String[] args) {
+		ArrayList Guirre_scores = new ArrayList<>();
+		
+		Guirre_scores.add(85);
+		Guirre_scores.add(92);
+		Guirre_scores.add(78);
+		Guirre_scores.add(90);
+		Guirre_scores.add(88);
+			
+		int total = 0;
+		int countAtLeast85 = 0;
+			for (int i = 0; i < Guirre_scores.size(); i++) {
+					int score = (int) Guirre_scores.get(i);
+						total += score;
+						if (score >= 85) {
+							countAtLeast85++;
+						}
+			}
+		double average = (double) total / Guirre_scores.size();
+			System.out.println("Scores: " + Guirre_scores);
+			System.out.println("Total: " + total);
+			System.out.println("Average: " + average);
+			System.out.println("Scores at least 85: " + countAtLeast85);
+		}
+	}
+
