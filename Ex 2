@@ -1,0 +1,58 @@
+package prac;
+import java.util.Scanner;
+
+public class ex2 {
+	public static void main(String[] args) {
+		
+		int[][] Matrix = {
+				{1, 2, 3},
+				{4, 5, 6},
+				{7, 8, 9}
+		};
+		
+		System.out.println("Original Matrix: ");
+		for (int i = 0; i <3; i++) {
+			for (int j = 0; j < 3; j++) {
+				System.out.println(Matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		
+		int[] rowSum = new int[3];
+		for (int i = 0; i <3; i++) {
+			for (int j = 0; j < 3; j++) {
+				rowSum[i] += Matrix[i][j];
+	}
+		}
+		System.out.println("Row Sums:");
+		System.out.println(rowSum[0] + ", " + rowSum[1] + ", " + rowSum[2]);
+		
+		int[] colSum = new int[3];
+		for (int j = 0; j <3; j++) {
+			for (int i = 0; i < 3; i++) {
+				colSum[j] += Matrix[i][j];
+	}
+		}
+		System.out.println("Column Sums:");
+		System.out.println(colSum[0] + ", " + colSum[1] + ", " + colSum[2]);
+		
+		int diagonalSum = 0;
+		for (int i = 0; i < 3; i++) {
+			diagonalSum += Matrix[i][i];
+		}
+		System.out.println("Main Diagonal Sum: " + diagonalSum);
+		System.out.println();
+		
+		System.out.println("Transpose: ");
+		for (int j = 0; j < 3; j++) {
+			for (int i = 0; i < 3; i++) {
+				System.out.println(Matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+}
+	}
+
+
