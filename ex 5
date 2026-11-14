@@ -1,0 +1,45 @@
+package prac;
+
+public class W2A5GUIRRE {
+    public static void main(String[] args) {
+        int[][] scores = {
+            {0, 1, 1, 0},
+            {1, 1, 0, 0},
+            {0, 0, 1, 1},
+            {0, 0, 1, 1}
+        };
+
+        int zeroCount = 0;
+        int oneCount = 0;
+        int maxOnes = -1;
+        int rowWithMaxOnes = -1;
+
+        for (int row = 0; row < scores.length; row++) {
+            int rowSum = 0;
+            int rowOneCount = 0;
+
+            for (int col = 0; col < scores[row].length; col++) {
+                int value = scores[row][col];
+                rowSum += value;
+
+                if (value == 0) {
+                    zeroCount++;
+                } else if (value == 1) {
+                    oneCount++;
+                    rowOneCount++;
+                }
+            }
+
+            System.out.println("Row " + row + " total: " + rowSum);
+
+            if (rowOneCount > maxOnes) {
+                maxOnes = rowOneCount;
+                rowWithMaxOnes = row;
+            }
+        }
+
+        System.out.println("\nTotal 0s: " + zeroCount);
+        System.out.println("Total 1s: " + oneCount);
+        System.out.println("Row with most 1s: Row " + rowWithMaxOnes + " (" + maxOnes + " ones)");
+    }
+}
