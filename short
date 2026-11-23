@@ -1,0 +1,59 @@
+package jade;
+import java.io.IOException;
+import java.nio.file.*;
+import java.util.Scanner;
+public class extend {
+	    static final Path FILE = Path.of("student_records.txt");
+
+	    public static void main(String[] args) {
+	        try (Scanner sc = new Scanner(System.in)) {
+	            while (true) {
+	                System.out.print("\n=== STUDENT RECORD ===\n1) Input new Student\n2) View Student\n3) Search Student\n4) Exit\nChoice: ");
+	                String choice = sc.nextLine();
+
+	                switch (choice) {
+	                    case "1" -> {
+	                        System.out.print("ID: ");
+	                        String id = sc.nextLine();
+	                        System.out.print("Name: ");
+	                        String name = sc.nextLine();
+	                        System.out.print("Course: ");
+	                        String record = "ID: %s | Name: %s | Course: %s%n".formatted(id, name, sc.nextLine());
+	                        
+	                        Files.writeString(FILE, record, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+	                        System.out.println("Saved!");
+	                    }
+	                    case "2" -> readRecords("");
+	                    case "3" -> {
+	                        System.out.print("Search ID or Name: ");
+	                        readRecords(sc.nextLine().toLowerCase());
+	                    }
+	                    case "4" -> {
+	                        System.out.println("Goodbye!");
+	                        return;
+	                    }
+	                    default -> System.out.println("Invalid choice (1-4).");
+	                }
+	            }
+	        } catch (IOException e) {
+	            System.out.println("File error: " + e.getMessage());
+	        }
+	    }
+
+	    static void readRecords(String keyword) throws IOException {
+	        if (!Files.exists(FILE)) {
+	            System.out.println("No records found yet.");
+	            return;
+	        }
+	        boolean found = false;
+	        for (String line : Files.readAllLines(FILE)) {
+	            if (line.toLowerCase().contains(keyword)) {
+	                System.out.println((keyword.isEmpty() ? "" : "Found -> ") + line);
+	                found = true;
+	            }
+	        }
+	        if (!found) System.out.println("No matching record found.");
+	    }
+	}
+
+
