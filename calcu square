@@ -1,0 +1,70 @@
+package jade;
+
+import java.util.Scanner;
+
+public class jay2 {
+
+    public static double calcCircle(double r) {
+        return Math.PI * r * r;
+    }
+
+    public static double calcRectangle(double l, double w) {
+        return l * w;
+    }
+
+    public static double calcSquare(double s) {
+        return s * s;
+    }
+
+    public static double calcTriangle(double b, double h) {
+        return 0.5 * b * h;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Area of the Figure");
+        System.out.println("1] Area of Circle");
+        System.out.println("2] Area of Rectangle");
+        System.out.println("3] Area of Square");
+        System.out.println("4] Area of Triangle");
+        System.out.print("Enter your Choice: ");
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter radius: ");
+                double radius = input.nextDouble();
+                System.out.println("The area of the circle is: " + calcCircle(radius));
+                break;
+
+            case 2:
+                System.out.print("Enter length: ");
+                double length = input.nextDouble();
+                System.out.print("Enter width: ");
+                double width = input.nextDouble();
+                System.out.println("The area of the rectangle is: " + calcRectangle(length, width));
+                break;
+
+            case 3:
+                System.out.print("Enter side: ");
+                double side = input.nextDouble();
+                System.out.println("The area of the square is: " + calcSquare(side));
+                break;
+
+            case 4:
+                System.out.print("Enter base: ");
+                double base = input.nextDouble();
+                System.out.print("Enter height: ");
+                double height = input.nextDouble();
+                System.out.println("The area of the triangle is: " + calcTriangle(base, height));
+                break;
+
+            default:
+                System.out.println("Invalid choice. Please select 1 to 4.");
+                break;
+        }
+
+        input.close();
+    }
+}
