@@ -1,0 +1,74 @@
+package jade;
+import java.util.*;
+public class W4Aguirre {
+	 public static void main(String[] args) {
+		   Scanner input = new Scanner(System.in);
+		   
+		   while (true) {
+	           
+	            displayMenuGuirre();
+	            
+	            char choice = input.next().toLowerCase().charAt(0);
+
+	            if (choice == 'x') {
+	                System.out.println("Exiting program. Goodbye!");
+	                break;
+	            }
+	            
+	            if (choice != 'a' && choice != 'b' && choice != 'c' && choice != 'd') {
+	                System.out.println("Invalid choice! Please select a, b, c, d, or x.");
+	                continue;
+	            }
+	            
+	            System.out.print("Enter first number: ");
+	            double num1 = input.nextDouble();
+	            System.out.print("Enter second number: ");
+	            double num2 = input.nextDouble();
+	         
+	            switch (choice) {
+	                case 'a':
+	                    addGuirre(num1, num2);
+	                    break;
+	                case 'b':
+	                    subtractGuirre(num1, num2);
+	                    break;
+	                case 'c':
+	                    multiplyGuirre(num1, num2);
+	                    break;
+	                case 'd':
+	                    divideGuirre(num1, num2);
+	                    break;
+	            }
+	        }
+	        input.close();
+	    }
+	    public static void displayMenuGuirre() {
+	        System.out.println("\nChoose an operation:");
+	        System.out.println("a) Add Numbers");
+	        System.out.println("b) Subtract Numbers");
+	        System.out.println("c) Multiply");
+	        System.out.println("d) Divide");
+	        System.out.println("x) Exit");
+	        System.out.print("Enter your choice: ");
+	    }
+	    public static void addGuirre(double Guirrenum1, double Guirrenum2) {
+	        double  Guirreresult = Guirrenum1 + Guirrenum2;
+	        System.out.println("Result: " + Guirrenum1 + " + " + Guirrenum2 + " = " +  Guirreresult);
+	    }
+	    public static void subtractGuirre(double Guirrenum1, double Guirrenum2) {
+	        double  Guirreresult = Guirrenum1 - Guirrenum2;
+	        System.out.println("Result: " + Guirrenum1 + " - " + Guirrenum2 + " = " +  Guirreresult);
+	    }
+	    public static void multiplyGuirre(double Guirrenum1, double Guirrenum2) {
+	        double  Guirreresult = Guirrenum1 * Guirrenum2;
+	        System.out.println("Result: " + Guirrenum1 + " * " + Guirrenum2 + " = " +  Guirreresult);
+	    }
+	    public static void divideGuirre(double Guirrenum1, double Guirrenum2) {
+	        if (Guirrenum2 != 0) {
+	            double  Guirreresult = Guirrenum1 / Guirrenum2;
+	            System.out.println("Result: " + Guirrenum1 + " / " + Guirrenum2 + " = " + Guirreresult);
+	        } else {
+	            System.out.println("Error: Division by zero is not allowed.");
+	        }
+	    }
+	}
